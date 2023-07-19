@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My Form</h2>
+
+<form action="/form" method="post">
+  <label for="param1">Param 1:</label><br>
+  <input type="text" id="param1" name="param1"><br>
+  <label for="param2">Param 2:</label><br>
+  <input type="text" id="param2" name="param2"><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+
+</body>
+</html>
