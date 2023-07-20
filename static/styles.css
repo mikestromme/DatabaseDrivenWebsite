@@ -1,0 +1,31 @@
+body {
+    background-color: #212121;
+    color: #fdf9f7;
+    font-family: Arial, sans-serif;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.logo img {
+    height: 37px;
+    width: 150px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.title h1 {
+    margin: 0;
+}
+
+
+
+
+

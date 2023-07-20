@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script>
-        // Define the URLs using Jinja2 expressions. This part will not be linted as JavaScript.
-        var form1URL = "{{ url_for('form1') }}";
-        var form2URL = "{{ url_for('form2') }}";
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
         
-        // Define JavaScript functions that use the URLs. This part will be linted as JavaScript.
-        function goToForm1() {
-            window.location.href = form1URL;
-        }
-        function goToForm2() {
-            window.location.href = form2URL;
-        }
-    </script>
-</head>
-<body>
-    <h1>Welcome to our website!</h1>
+        
+        <script>
+            // Define the URLs using Jinja2 expressions. This part will not be linted as JavaScript.
+            var form1URL = "{{ url_for('form1') }}";
+            var form2URL = "{{ url_for('form2') }}";
+            
+            // Define JavaScript functions that use the URLs. This part will be linted as JavaScript.
+            function goToForm1() {
+                window.location.href = form1URL;
+            }
+            function goToForm2() {
+                window.location.href = form2URL;
+            }
+        </script>
+    </head>
+    
+<body>    
+    <header class="main-header">
+        <div class="logo">
+            <img src="/static/images/logo_prod_new.png" alt="Logo">
+        </div>
+        <div class="title">
+            <h1>Suburban Xalt</h1>
+        </div>
+    </header>
+    
 
+
+    
     <!-- Use the JavaScript functions in the onclick events -->
     <button onclick="goToForm1();" type="button">Form 1</button>
     <button onclick="goToForm2();" type="button">Form 2</button>
