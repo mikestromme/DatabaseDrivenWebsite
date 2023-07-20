@@ -99,6 +99,20 @@ def execute_proc():
         return {'status': 'success'}, 200
     except Exception as e:
         return {'status': 'error', 'message': str(e)}, 400
+    
+@app.route('/get_data', methods=['GET'])
+def get_data():
+    result = db.session.execute(text("SELECT top 10 * FROM catavolt_users"))
+    data = result.fetchall()
+
+    # Get the keys (column names) from the ResultProxy object
+    keys = result.keys()
+
+   # Convert each row to a dictionary
+    data = [dict(zip(keys, row)) for row in data]
+
+    return {'data': data, 'columns': list(keys)}
+
 
 
 if __name__ == '__main__':

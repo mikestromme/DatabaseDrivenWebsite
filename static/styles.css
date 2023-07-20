@@ -25,6 +25,44 @@ body {
     margin: 0;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #3a3a39;
+    padding: 8px;
+}
+
+th {
+    background-color: #e75524;
+    color: #fdf9f7;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf9f7;
+    color: #212121;
+}
+
+.button {
+    background-color: #e75524;
+    color: #fdf9f7;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ec88a1;
+}
+
+
 
 
 
