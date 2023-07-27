@@ -100,8 +100,9 @@ def execute_proc():
     except Exception as e:
         return {'status': 'error', 'message': str(e)}, 400
     
-@app.route('/get_data', methods=['GET'])
-def get_data():
+
+@app.route('/viewdata')
+def viewdata():
     result = db.session.execute(text("SELECT top 10 * FROM catavolt_users"))
     data = result.fetchall()
 
@@ -111,7 +112,10 @@ def get_data():
    # Convert each row to a dictionary
     data = [dict(zip(keys, row)) for row in data]
 
-    return {'data': data, 'columns': list(keys)}
+    #return {'data': data, 'columns': list(keys)}
+
+
+    return render_template('viewdata.html',data=data)
 
 
 
